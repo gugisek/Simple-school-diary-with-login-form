@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend:200,300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700,900&display=swap');
+body {
+    margin: 0;
+    font-family: Lexend, Roboto, sans-serif;
+}
+button {
+    font-family: Lexend, Roboto, sans-serif;
+    background-color: #fff;
+    border: 1px solid #3d3d3d;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+input {
+    font-family: Lexend, Roboto, sans-serif;
+    cursor: pointer;
+}
+.login-input{
+    border: 0;
+    border-bottom: 1px solid #8d8d8d;
+    padding: 5px 20px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+.login-input:focus{
+    outline: none;
+    border-bottom: 1px solid #3d3d3d;
+}
+.login-input::placeholder{
+    color: red;
+}
+.logout {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #fff;
+    padding: 2px 0;
+}
+.logout:hover {
+    border-bottom: 1px solid #3d3d3d;
+}
+.header {
+    align-items: baseline;
+}
+@media screen and (max-width: 1200px) {
+  .header {
+    align-items: center;
+}
+  .w-20 {
+    width: auto;
+}
+}
