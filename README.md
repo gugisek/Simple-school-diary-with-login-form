@@ -1,4 +1,4 @@
-# Simple school diary with login form
+# Simple school diary with login form in PHP with CSS
 
 Import database as "dzienniczek_ucznia" on localhost with login = "root", pass = "".
 
