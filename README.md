@@ -8,4 +8,4 @@ Created two test accounts:
   
  Detailed documentation in "Dzienniczek ucznia - dokumentacja" file.
  
- Yes it's school project.
+ Yes, it's school project.
