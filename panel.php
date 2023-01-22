@@ -1,16 +1,13 @@
-<?php
-
- session_start();
-
- if(!isset($_SESSION["zalogowany"]) || $_SESSION["zalogowany"] !== true){
-    header("location: index.php");
-     exit;
-}
+<?php session_start();
+    if(!isset($_SESSION["zalogowany"]) || $_SESSION["zalogowany"] !== true){
+        header("location: index.php");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
-<?php include 'head.php'; ?>
-<script src="clock.js"></script>
+<?php include 'components/head.php'; ?>
+<script src="scripts/clock.js"></script>
 <body class="d-flex jev ac flex-col min-height-100vh" onload="clock()">
     <div class="header d-flex row-dir jc jev w-100 flex-wrap">
         <p class="w-20 m-0" id="zegar"></p>

@@ -2,10 +2,10 @@
     if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == true) {
         header("Location: panel.php");
     }
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="pl">
-<?php include 'head.php'; ?>
+<?php include 'components/head.php'; ?>
 <body class="d-flex jev ac flex-col min-height-100vh">
     <h1 class="fw-light m-0">Dzienniczek ucznia</h1>
     <section class="w-20 d-flex flex-col ac jev py-60px px-50px" style="
@@ -22,7 +22,7 @@
             <button type="submit" id="login-button" class="mt-10px">Zaloguj</button>
         </form>
         <?php
-        
+        // auth.php
             if(isset($_GET['login']) && isset($_GET['password'])) {
                 $login = $_GET['login'];
                 $password = $_GET['password'];
