@@ -5,5 +5,5 @@
     <title>Dzienniczek ucznia</title>
     <link rel="stylesheet" href="styles/pre-class.css">
     <link rel="stylesheet" href="styles/global.css">
-    <link rel="icon" href="resources.img/icon.png">
+    <link rel="icon" href="resources/img/icon.png">
 </head>

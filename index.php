@@ -44,7 +44,7 @@
                 }
                 if($login != '' && $password != '') {
                     $conn = mysqli_connect('localhost', 'root', '','dzienniczek_ucznia');
-                    $query = "SELECT * FROM `uczen` WHERE `Login` = '$login' AND `Haslo` = '$password'";
+                    $query = "SELECT * FROM `uczniowie` WHERE `Login` = '$login' AND `Haslo` = '$password'";
                     $result = mysqli_query($conn, $query);
                     if(mysqli_num_rows($result) > 0) {
                         $_SESSION['uzytkownik'] = $login;

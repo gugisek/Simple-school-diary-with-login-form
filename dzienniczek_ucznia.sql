@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Sty 2023, 18:41
--- Wersja serwera: 10.4.25-MariaDB
--- Wersja PHP: 8.1.10
+-- Czas generowania: 22 Sty 2023, 16:47
+-- Wersja serwera: 10.4.27-MariaDB
+-- Wersja PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,8 @@ CREATE TABLE `oceny` (
   `Ocena` int(2) NOT NULL,
   `Id_przedmiotu` int(11) NOT NULL,
   `Id_ucznia` int(11) NOT NULL,
-  `Opis` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Opis` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Zrzut danych tabeli `oceny`
@@ -57,7 +57,12 @@ INSERT INTO `oceny` (`Id_oceny`, `Ocena`, `Id_przedmiotu`, `Id_ucznia`, `Opis`) 
 (87, 6, 2, 2, 'Dobra praca Andrzejku'),
 (88, 1, 1, 2, 'Lipa'),
 (89, 5, 2, 1, 'sdf'),
-(90, 5, 2, 1, 'Ocenka warjacie');
+(90, 5, 2, 1, 'Ocenka warjacie'),
+(91, 4, 1, 2, 'Kartkowka'),
+(92, 5, 2, 1, 'Qwert'),
+(93, 5, 4, 1, 'kartkówka'),
+(94, 6, 4, 1, 'Odpowiedź ustna'),
+(95, 5, 3, 2, 'Aktywność');
 
 -- --------------------------------------------------------
 
@@ -68,7 +73,7 @@ INSERT INTO `oceny` (`Id_oceny`, `Ocena`, `Id_przedmiotu`, `Id_ucznia`, `Opis`) 
 CREATE TABLE `przedmioty` (
   `Id_przedmiotu` int(11) NOT NULL,
   `Nazwa` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Zrzut danych tabeli `przedmioty`
@@ -83,10 +88,10 @@ INSERT INTO `przedmioty` (`Id_przedmiotu`, `Nazwa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `uczen`
+-- Struktura tabeli dla tabeli `uczniowie`
 --
 
-CREATE TABLE `uczen` (
+CREATE TABLE `uczniowie` (
   `Id_ucznia` int(20) NOT NULL,
   `Imie` varchar(20) NOT NULL,
   `Nazwisko` varchar(20) NOT NULL,
@@ -94,13 +99,13 @@ CREATE TABLE `uczen` (
   `Rok szkolny` text NOT NULL,
   `Login` varchar(20) NOT NULL,
   `Haslo` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Zrzut danych tabeli `uczen`
+-- Zrzut danych tabeli `uczniowie`
 --
 
-INSERT INTO `uczen` (`Id_ucznia`, `Imie`, `Nazwisko`, `Klasa`, `Rok szkolny`, `Login`, `Haslo`) VALUES
+INSERT INTO `uczniowie` (`Id_ucznia`, `Imie`, `Nazwisko`, `Klasa`, `Rok szkolny`, `Login`, `Haslo`) VALUES
 (1, 'Gustaw', 'Sołdecki', '4pi', '2022/2023', 'Gustaw', '1234'),
 (2, 'Andrzejek', 'Kmicic', '4i', '2022/203', 'Andrzejek', '1234');
 
@@ -121,9 +126,9 @@ ALTER TABLE `przedmioty`
   ADD PRIMARY KEY (`Id_przedmiotu`);
 
 --
--- Indeksy dla tabeli `uczen`
+-- Indeksy dla tabeli `uczniowie`
 --
-ALTER TABLE `uczen`
+ALTER TABLE `uczniowie`
   ADD PRIMARY KEY (`Id_ucznia`);
 
 --
@@ -134,7 +139,7 @@ ALTER TABLE `uczen`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `Id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `Id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT dla tabeli `przedmioty`
@@ -143,9 +148,9 @@ ALTER TABLE `przedmioty`
   MODIFY `Id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT dla tabeli `uczen`
+-- AUTO_INCREMENT dla tabeli `uczniowie`
 --
-ALTER TABLE `uczen`
+ALTER TABLE `uczniowie`
   MODIFY `Id_ucznia` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 

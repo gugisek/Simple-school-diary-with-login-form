@@ -16,7 +16,7 @@
         
         $conn = mysqli_connect('localhost', 'root', '', 'dzienniczek_ucznia');
         $sesja_login = $_SESSION['uzytkownik'];
-        $query = "SELECT Imie FROM uczen WHERE Login = '$sesja_login'";
+        $query = "SELECT Imie FROM uczniowie WHERE Login = '$sesja_login'";
         $result = mysqli_query($conn, $query);
 
         while($row = mysqli_fetch_assoc($result)) {
@@ -45,7 +45,7 @@
             <?php
             
             $conn = mysqli_connect('localhost', 'root', '', 'dzienniczek_ucznia');
-            $query = "SELECT * FROM uczen WHERE login = '$sesja_login'";
+            $query = "SELECT * FROM uczniowie WHERE login = '$sesja_login'";
             $result = mysqli_query($conn, $query);
 
             while($row = mysqli_fetch_assoc($result)) {
@@ -70,7 +70,7 @@
                 <?php
 
                 $conn = mysqli_connect('localhost', 'root', '', 'dzienniczek_ucznia');
-                $query = "SELECT Ocena, Opis, Imie, Nazwa FROM `oceny` join uczen on uczen.Id_ucznia=oceny.Id_ucznia  join przedmioty on oceny.Id_przedmiotu=przedmioty.Id_przedmiotu where login = '$sesja_login';";
+                $query = "SELECT Ocena, Opis, Imie, Nazwa FROM `oceny` join uczniowie on uczniowie.Id_ucznia=oceny.Id_ucznia  join przedmioty on oceny.Id_przedmiotu=przedmioty.Id_przedmiotu where login = '$sesja_login';";
                 $result = mysqli_query($conn, $query);
                 while($row = $result->fetch_assoc()) 
                 {

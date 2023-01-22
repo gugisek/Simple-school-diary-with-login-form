@@ -8,7 +8,7 @@
                     $conn = mysqli_connect('localhost', 'root', '', 'dzienniczek_ucznia');
                     $sesja_login = $_SESSION['uzytkownik'];
 
-                    $sql = "SELECT Id_ucznia FROM `uczen` WHERE `Login` = '$sesja_login'";
+                    $sql = "SELECT Id_ucznia FROM `uczniowie` WHERE `Login` = '$sesja_login'";
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
                     $id_ucznia = $row['Id_ucznia'];
